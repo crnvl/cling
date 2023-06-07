@@ -77,6 +77,18 @@ fn main() {
                 let result = api::create_post(Some(thumb_url), content, Some(ref_id), board);
                 result
             },
+            "help" => {
+                let mut output = String::new();
+                output.push_str("debug - Get debug info\n");
+                output.push_str("boards - Get list of boards\n");
+                output.push_str("posts - Get list of posts in a board\n");
+                output.push_str("post - Get a post by ID\n");
+                output.push_str("comments - Get list of comments in a post\n");
+                output.push_str("create - Create a post\n");
+                output.push_str("help - Show this help message\n");
+                output.push_str("exit - Exit the program\n");
+                output
+            },
             "exit" => break,
             _ => "Unknown command".to_string(),
         };
