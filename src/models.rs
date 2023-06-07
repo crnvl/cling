@@ -10,10 +10,3 @@ pub struct Post {
     pub ref_id: i64,
     pub time: String,
 }
-
-pub struct UserPost {
-    pub thumb_url: Option<String>,
-    pub content: String,
-    pub username: Option<String>,
-    pub ref_id: Option<i64>,
-}
