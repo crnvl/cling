@@ -1,3 +1,5 @@
+[![Check Build](https://github.com/angelsflyinhell/cling/actions/workflows/check.yml/badge.svg)](https://github.com/angelsflyinhell/cling/actions/workflows/check.yml)
+
 # cling
 Lightweight CLI client for ping instances. Also supports instances hosted elsewhere as long as they're not modified.
 
