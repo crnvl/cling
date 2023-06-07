@@ -1,3 +1,5 @@
+use std::io::Write;
+
 use serde::Deserialize;
 
 #[derive(Deserialize)]
@@ -11,4 +13,13 @@ pub fn read_properties() -> (String, String) {
     let json: JsonProps = serde_json::from_str(&content).expect("JSON was not well-formatted");
 
     (json.base_url, json.username)
+}
+
+pub fn read_console() -> String {
+    print!("> ");
+    std::io::stdout().flush().unwrap();
+    let mut input = String::new();
+    std::io::stdin().read_line(&mut input).unwrap();
+    input.trim().to_string()
+
 }
