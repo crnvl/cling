@@ -15,8 +15,8 @@ pub fn read_properties() -> (String, String) {
     (json.base_url, json.username)
 }
 
-pub fn read_console() -> String {
-    print!("> ");
+pub fn read_console(prefix: &str) -> String {
+    print!("{}", prefix);
     std::io::stdout().flush().unwrap();
     let mut input = String::new();
     std::io::stdin().read_line(&mut input).unwrap();
