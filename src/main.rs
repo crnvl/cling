@@ -11,7 +11,14 @@ fn main() {
         let output = match input.as_str() {
             "debug" => get_debug(),
             "boards" => {
-                api::get_boards()
+                let json = api::get_boards();
+
+                let boards: Vec<String> = serde_json::from_str(&json).unwrap();
+                let mut output = String::new();
+                for board in boards.iter() {
+                    output.push_str(&format!("{}\n", board));
+                }
+                output
             }
             "exit" => break,
             _ => "Unknown command".to_string(),
